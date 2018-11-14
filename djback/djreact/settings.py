@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users',
     'djapi',
+    'resnet',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
