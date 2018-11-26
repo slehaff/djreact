@@ -1,8 +1,7 @@
 "This module does bla bla"
+import math
 import cv2
 import numpy as np
-from PIL import Image
-import math
 
 
 WIDTH = 854
