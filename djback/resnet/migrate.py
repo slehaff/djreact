@@ -7,7 +7,7 @@ import numpy as np
 WIDTH = 854
 height = 480
 periods = 1
-hfPeriods = 10
+HFPeriods = 10
 
 
 def makeTRiangle(width, height, hfPeriods):
@@ -50,11 +50,11 @@ def maketexture(w, h, value):
 # gamma_correct = compensate_gamma(file)
 
 
-makeimage(WIDTH, height, hfPeriods, -1)
-makeimage(WIDTH, height, hfPeriods, 0)
-makeimage(WIDTH, height, hfPeriods, 1)
+makeimage(WIDTH, height, HFPeriods, -1)
+makeimage(WIDTH, height, HFPeriods, 0)
+makeimage(WIDTH, height, HFPeriods, 1)
 makeimage(WIDTH, height, periods, 5)
 makeimage(WIDTH, height, periods, 6)
 makeimage(WIDTH, height, periods, 7)
 maketexture(WIDTH, height, 100)
-makeTRiangle(WIDTH, height, hfPeriods)
+makeTRiangle(WIDTH, height, HFPeriods)
