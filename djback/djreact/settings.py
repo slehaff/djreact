@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'users',
     'djapi',
     'resnet',
+    'train',
     'django.contrib.sites',
     'allauth',
     'allauth.account',

@@ -4,10 +4,10 @@ import cv2
 import numpy as np
 
 
-WIDTH = 854
-height = 480
+WIDTH = 854 * 3
+height = 480 * 3
 periods = 1
-HFPeriods = 10
+HFPeriods = 160
 
 
 def makeTRiangle(width, height, hfPeriods):
