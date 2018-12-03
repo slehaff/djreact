@@ -16,5 +16,5 @@ class TrainingData(models.Model):
 
 
 class ImageFolder(models.Model):
-    "Single image folder containing input and ground truth image"
+    "Single image folder containing input and ground truth image, first cnn calculates bckg light"
     train_data = models.ForeignKey(TrainingData, on_delete=models.CASCADE)
