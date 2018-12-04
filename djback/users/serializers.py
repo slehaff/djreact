@@ -4,6 +4,8 @@ from . import models
 
 
 class UserSerializer(serializers.ModelSerializer):
+    "Docstring"
     class Meta:
+        "Docstring"
         model = models.CustomUser
         fields = ('email', 'username', )
