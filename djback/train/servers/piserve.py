@@ -1,23 +1,49 @@
 'rpi3 server receiver'
 
 import socket
-import cv2
-import numpy as np
 import struct
 import threading
 import shutil
 import os
+import numpy as np
+import cv2
 
 
-def new_receiver_thread(n, folder):
+def mov_files(dir_to):
+    'Docstring'
+    path = '/home/samir/PycharmProjects/danbotsIII/scan/static/scan_folder/im_folder/'
+    moveto = dir_to
+    files = os.listdir(path)
+    files.sort()
+    for f in files:
+        src = path + f
+        dst = moveto + f
+        shutil.move(src, dst)
+
+
+def rcv_all(sock, count):
+    'Doctring'
+    buf = b''
+    while count:
+        new_buf = sock.recv(count)
+        if not new_buf:
+            return None
+        buf += new_buf
+        count -= len(new_buf)
+    return buf
+
+
+def new_receiver_thread(folder):
+    'Docstring'
     t = threading.Thread(target=new_receive_pi_data,
-                         args=(n, folder),
+                         args=(folder, ),
                          name='T1')
     t.start()
     return t
 
 
-def new_receive_pi_data(n, to_folder):
+def new_receive_pi_data(to_folder):
+    'Docstring'
     print('new receive called')
     server_socket = socket.socket()
     server_socket.bind(('0.0.0.0', 8001))

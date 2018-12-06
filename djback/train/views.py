@@ -8,11 +8,11 @@ def collect_data(request):
     'start threads, send message to rpi3'
 
     folder = 'folder'
-    t = new_receiver_thread('1', folder)
+    t = new_receiver_thread(folder)
     collect_mess()
     t.join()
 
     print('collect data!')
-    return HttpResponse('train view ...')
+    return HttpResponse('train2 view ...')
 
 # Create your views here.
