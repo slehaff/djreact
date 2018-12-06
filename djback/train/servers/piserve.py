@@ -48,7 +48,7 @@ def new_receive_pi_data(to_folder):
     server_socket = socket.socket()
     server_socket.bind(('0.0.0.0', 8001))
     server_socket.listen(0)
-    conn, adr = server_socket.accept()
+    conn, _ = server_socket.accept()
     i = 0
     try:
         while True:
