@@ -42,9 +42,10 @@ def makeimage(w, h, wvcount, phi):
 
 
 def maketexture(w, h, value):
+    'text'
     ima = np.full((w, h), value)
     ima = np.transpose(ima)
-    cv2.imwrite('cosines/0_saw.png', ima)
+    cv2.imwrite('cosines/0_saw.jpg', ima)
 
 # file = '/home/samir/PycharmProjects/db2/scan/static/scan_folder/gamma_im_folder/image1.png'
 # gamma_correct = compensate_gamma(file)

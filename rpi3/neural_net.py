@@ -17,7 +17,7 @@ def train_take(connection):
 
     i = 0
     max = i+2
-    fname = "cosines/" + 'cnncos' + "/" + str(i) + "_cnn.jpg"
+    fname = "cosines/" + 'cnncos' + "/" + str(i) + "_saw.jpg"
     print(fname)
     img = pygame.image.load(fname)
     windowSurface.blit(img, (0, 0))
@@ -35,7 +35,7 @@ def train_take(connection):
             i += 1
             if i == max:
                 break
-            fname = "cosines/" + cfolder + "/" + str(i) + "_cos.jpg"
+            fname = "cosines/" + 'cnncos' + "/" + str(i) + "_saw.jpg"
             print(fname)
             img = pygame.image.load(fname)
             windowSurface.blit(img, (0, 0))
