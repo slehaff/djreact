@@ -1,6 +1,7 @@
 import socket
 import camin as cm
 import gamma as gm
+import neural_net as nn
 
 
 IP = '0.0.0.0'
@@ -34,5 +35,6 @@ while i == 1:
         cm.abs_scan(data)
     elif data == 'gamma_scan':
         gm.gamma_cal()
-
+    elif data == 'collecct_data':
+        nn.data_collect()
     print('Received:', data)

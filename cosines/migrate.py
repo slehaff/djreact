@@ -4,10 +4,10 @@ import cv2
 import numpy as np
 
 
-WIDTH = 854 * 3
-height = 480 * 3
+WIDTH = 1920
+height = 1080
 periods = 1
-HFPeriods = 160
+HFPeriods = 100
 
 
 def makeTRiangle(width, height, hfPeriods):
@@ -22,7 +22,7 @@ def makeTRiangle(width, height, hfPeriods):
     for j in range(height):
         ima[:, j] = imaline
     ima = np.transpose(ima)
-    cv2.imwrite('tri.jpg', ima)
+    cv2.imwrite('cosines/1_saw.jpg', ima)
 
 
 def makeimage(w, h, wvcount, phi):
@@ -38,23 +38,17 @@ def makeimage(w, h, wvcount, phi):
     for j in range(h):
         ima[:, j] = imaline
     ima = np.transpose(ima)
-    cv2.imwrite(str(phi + 1) + '_cos.jpg', ima)
+    cv2.imwrite('djreact/cosines/' + str(phi + 1) + '_cos.jpg', ima)
 
 
 def maketexture(w, h, value):
     ima = np.full((w, h), value)
     ima = np.transpose(ima)
-    cv2.imwrite('texture.png', ima)
+    cv2.imwrite('cosines/0_saw.png', ima)
 
 # file = '/home/samir/PycharmProjects/db2/scan/static/scan_folder/gamma_im_folder/image1.png'
 # gamma_correct = compensate_gamma(file)
 
 
-makeimage(WIDTH, height, HFPeriods, -1)
-makeimage(WIDTH, height, HFPeriods, 0)
-makeimage(WIDTH, height, HFPeriods, 1)
-makeimage(WIDTH, height, periods, 5)
-makeimage(WIDTH, height, periods, 6)
-makeimage(WIDTH, height, periods, 7)
 maketexture(WIDTH, height, 100)
 makeTRiangle(WIDTH, height, HFPeriods)
