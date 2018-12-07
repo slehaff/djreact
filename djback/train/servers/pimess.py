@@ -7,8 +7,8 @@ PORT = 5005
 
 
 def collect_mess():
-    'Docstring'
-    message = b'3singlecos'
+    'Message for collecting training data'
+    message = b'collect_data'
     sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     sock.sendto(message, (IP, PORT))
     return
