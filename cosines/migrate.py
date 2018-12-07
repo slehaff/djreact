@@ -25,22 +25,6 @@ def makeTRiangle(width, height, hfPeriods):
     cv2.imwrite('cosines/1_saw.jpg', ima)
 
 
-def makeimage(w, h, wvcount, phi):
-    "This function does bla bla"
-    ima = np.zeros((w, h))
-    imaline = np.ones(w)
-    raw_inp = np.ones(w)
-    for i in range(w):
-        raw_inp[i] = 255.0*(1.0/2.0 + 1.0/2.0*np.cos(2.0*np.pi *
-                                                     (1.0*float(phi)/3.0 + wvcount*float(i)/float(w))))
-        # imaline[i] = np.polyval(gamma_correct, raw_inp[i])
-        imaline[i] = raw_inp[i]
-    for j in range(h):
-        ima[:, j] = imaline
-    ima = np.transpose(ima)
-    cv2.imwrite('djreact/cosines/' + str(phi + 1) + '_cos.jpg', ima)
-
-
 def maketexture(w, h, value):
     'text'
     ima = np.full((w, h), value)
