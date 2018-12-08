@@ -11,7 +11,7 @@ import cv2
 
 def mov_files(dir_to):
     'Docstring'
-    path = '/home/samir/PycharmProjects/danbotsIII/scan/static/scan_folder/im_folder/'
+    path = '/home/samir/djreact/djback/train/static/im_folder/'
     moveto = dir_to
     files = os.listdir(path)
     files.sort()
@@ -65,7 +65,7 @@ def new_receive_pi_data(to_folder):
             print('received image!')
             # dec_img = dec_img[25:265, 180:630]
             i += 1
-            folder = '/home/samir/PycharmProjects/danbotsIII/scan/static/scan_folder/im_folder'
+            folder = '/home/samir/djreact/djback/train/static/im_folder/'
             cv2.imwrite(folder + '/image' + str(i)+'.png', dec_img)
             print('i=', i, image_len, dec_img.shape)
     finally:

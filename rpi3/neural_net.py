@@ -13,6 +13,7 @@ SERVER_CONNECTION = 8001
 
 
 def train_take(connection):
+    'text'
     pygame.init()
     WIDTH = 854
     HEIGHT = 480
@@ -51,15 +52,15 @@ def train_take(connection):
 
 
 def data_collect():
+    'text'
     client_socket = socket.socket()
     client_socket.connect((SERVER_IP, SERVER_CONNECTION))
     connection = client_socket.makefile('wb')
     count = 1000
     j = 0
     while j < count:
-        print('horizontal 4')
         train_take(connection)
-        print(j)
+        print('Loop count:', j)
         j += 1
     connection.write(struct.pack('<L', 0))
     connection.flush()

@@ -7,7 +7,7 @@ from train.servers.pimess import collect_mess
 def collect_data(request):
     'start threads, send message to rpi3'
 
-    folder = 'folder'
+    folder = '/home/samir/djreact/djback/train/static/train_im_folder/'
     t = new_receiver_thread(folder)
     collect_mess()
     t.join()
