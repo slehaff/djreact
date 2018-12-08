@@ -35,6 +35,7 @@ while i == 1:
         cm.abs_scan(data)
     elif data == 'gamma_scan':
         gm.gamma_cal()
-    elif data == 'collecct_data':
+    elif data == 'collect_data':
         nn.data_collect()
+
     print('Received:', data)

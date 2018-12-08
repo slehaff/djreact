@@ -8,6 +8,9 @@ import pygame
 import numpy as np
 from pygame.locals import *
 
+SERVER_IP = '192.168.0.22'
+SERVER_CONNECTION = 8001
+
 
 def train_take(connection):
     pygame.init()
@@ -45,4 +48,21 @@ def train_take(connection):
     finally:
         camera.close()
         pygame.quit()
+
+
+def data_collect():
+    client_socket = socket.socket()
+    client_socket.connect((SERVER_IP, SERVER_CONNECTION))
+    connection = client_socket.makefile('wb')
+    count = 1000
+    j = 0
+    while j < count:
+        print('horizontal 4')
+        train_take(connection)
+        print(j)
+        j += 1
+    connection.write(struct.pack('<L', 0))
+    connection.flush()
+    connection.close()
+    client_socket.close()
     return
