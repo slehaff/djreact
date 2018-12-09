@@ -2,7 +2,7 @@
 import socket
 # import pickle
 
-IP = '192.168.0.50'
+IP = '192.168.0.24'
 PORT = 5005
 
 

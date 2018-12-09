@@ -56,7 +56,7 @@ def data_collect():
     client_socket = socket.socket()
     client_socket.connect((SERVER_IP, SERVER_CONNECTION))
     connection = client_socket.makefile('wb')
-    count = 1000
+    count = 100
     j = 0
     while j < count:
         train_take(connection)
