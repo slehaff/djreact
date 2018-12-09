@@ -1,4 +1,4 @@
-"This module does bla bla"
+"This module generates test patterns"
 import math
 import cv2
 import numpy as np
@@ -10,7 +10,7 @@ PERIODS = 1
 HFPERIODS = 100
 
 
-def makeTRiangle(width, height, hfPeriods):
+def make_triangle(width, height, hfPeriods):
     "This functtion makes a sawtooth wave"
     ima = np.zeros((width, height))
     imaline = np.ones(width)
@@ -39,7 +39,7 @@ def make_sinusoidal(width, height, wvcount, phi):
     cv2.imwrite('make_cosines/2_saw.jpg', ima)
 
 
-def maketexture(width, height, value):
+def make_texture(width, height, value):
     'text'
     ima = np.full((width, height), value)
     ima = np.transpose(ima)
@@ -49,6 +49,6 @@ def maketexture(width, height, value):
 # gamma_correct = compensate_gamma(file)
 
 
-maketexture(WIDTH, HEIGHT, 180)
-makeTRiangle(WIDTH, HEIGHT, HFPERIODS)
+make_texture(WIDTH, HEIGHT, 180)
+make_triangle(WIDTH, HEIGHT, HFPERIODS)
 make_sinusoidal(WIDTH, HEIGHT, HFPERIODS, 0)
