@@ -1,4 +1,4 @@
-"This module generates test patterns"
+"This module generates SL patterns"
 import math
 import cv2
 import numpy as np
@@ -10,14 +10,14 @@ PERIODS = 1
 HFPERIODS = 100
 
 
-def make_triangle(width, height, hfPeriods):
+def make_triangle(width, height, hfperiods):
     "This functtion makes a sawtooth wave"
     ima = np.zeros((width, height))
     imaline = np.ones(width)
     raw_inp = np.ones(width)
     for i in range(width):
-        raw_inp[i] = 255.0*(hfPeriods * i/width -
-                            math.trunc(hfPeriods * i/width))
+        raw_inp[i] = 255.0*(hfperiods * i/width -
+                            math.trunc(hfperiods * i/width))
         imaline[i] = raw_inp[i]
     for j in range(height):
         ima[:, j] = imaline
@@ -40,10 +40,11 @@ def make_sinusoidal(width, height, wvcount, phi):
 
 
 def make_texture(width, height, value):
-    'text'
+    'background light'
     ima = np.full((width, height), value)
     ima = np.transpose(ima)
     cv2.imwrite('make_cosines/0_saw.jpg', ima)
+
 
 # file = '/home/samir/PycharmProjects/db2/scan/static/scan_folder/gamma_im_folder/image1.png'
 # gamma_correct = compensate_gamma(file)
