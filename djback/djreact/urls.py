@@ -10,4 +10,6 @@ urlpatterns = [
     # path('djapi/v1/', include('djapi.urls')),
     # path('resnet/v1/', include('resnet.urls')),
     path('train', include('train.urls')),
+    path('phone', include('phonecam.urls')),
+
 ]

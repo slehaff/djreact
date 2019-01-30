@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'djapi',
     'resnet',
     'train',
+    'phonecam',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
