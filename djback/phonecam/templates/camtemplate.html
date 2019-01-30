@@ -1,4 +1,5 @@
 <html lang=”en”>
+{% load static%}
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -8,7 +9,7 @@
 		<title>Camera App</title>
 
 		<!-- Link to main style sheet -->
-		<link rel="stylesheet" href="style.css"> 
+		<link rel="stylesheet" href="{% static '/static/camstyle.css' %}">
 	</head>
 	<body>
 
@@ -30,7 +31,7 @@
 		</main>
 
 		<!-- Reference to your JavaScript file -->
-		<script src="app.js"></script> 
+		<script src="/static/cam.js"></script> 
 	</body>
 </html>
 

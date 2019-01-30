@@ -6,6 +6,5 @@ from django.http import HttpResponse
 def camera(request):
 
     print('phone camera')
-    return HttpResponse('camera view ...')
-
+    return render(request, 'camtemplate.html')
 # Create your views here.
